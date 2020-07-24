@@ -11,28 +11,28 @@ class CreateDormroomsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('dormrooms', function (Blueprint $table) {
+    public function up() {
+        Schema::create('Dormrooms', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('Dormrooms_id')->nullable();
+            $table->string('name_of_the_property') -> unique();
             $table->float('price');
             $table->string("adress");
             $table->integer('free_dorms') -> nullable();
-            $table->string('name_of_the_property') -> unique();
             $table->string('adicional_prices')-> nullable();
             $table->string('phone');
-
-        });
-    }
+        
+        }
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
+
     public function down()
     {
-        Schema::dropIfExists('dormrooms');
+        Schema::dropIfExists('Dormrooms');
     }
 }
