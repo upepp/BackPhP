@@ -23,16 +23,15 @@ class CreateDormroomsTable extends Migration
             $table->string('adicional_prices')-> nullable();
             $table->string('phone');
         
-        }
-
+        });
+    }    
     /**
      * Reverse the migrations.
      *
      * @return void
      */
 
-    public function down()
-    {
+    public function down(){
         Schema::dropIfExists('Dormrooms');
     }
 }
